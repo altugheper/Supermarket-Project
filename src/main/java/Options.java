@@ -7,55 +7,47 @@ public class Options extends Customer{
     boolean flag = true;
 
 
-    public void displayMenu() {
-        System.out.println("Welcome to the shopping basket");
-        System.out.println("Please choose an option:");
-        System.out.println("1. Add item");
-        System.out.println("2. Display basket");
-        System.out.println("3. Exit");
-    }
-
-    public void displayMenu1() {
-        System.out.println("Please choose an option:");
-        System.out.println("1. Add item");
-        System.out.println("2. Display basket");
-        System.out.println("3. Exit");
-    }
-
-
-
-    public void menu(){
-        System.out.println("Tomato");
-        System.out.println("Potato");
-        System.out.println("Cucumber");
-        System.out.println("Broccoli");
-        System.out.println("Carrot");
-        System.out.println("Banana");
-        System.out.println("Kiwi");
-        System.out.println("Apple");
-        System.out.println("Watermelon");
-        System.out.println("Grapes");
-        System.out.println("Please write the name of the product you would like to add to the basket: ");
-    }
-
-
-
     public void checkingOperations(){
         ShoppingBasket shoppingBasket = new ShoppingBasket();
-        displayMenu();
+        Menu.displayMenu();
         while (flag) {
             int option = input.nextInt();
+            int option2 = input.nextInt();
             switch (option){
                 case 1:
-                    menu();
-                    String item = input.next();
-                    System.out.println("Enter the quantity:");
-                    int quantity = input.nextInt();
-                    shoppingBasket.addItem(item,quantity);
+                    Menu.separatedMenu();
+                    switch (option2){
+                        case 1:
+                            Menu.vegetableMenu();
+                            String item = input.next();
+                            System.out.println("Enter the quantity:");
+                            int quantity = input.nextInt();
+                            shoppingBasket.addItem(item,quantity);
+                            break;
+                        case 2:
+                            Menu.fruitMenu();
+                            String item2 = input.next();
+                            System.out.println("Enter the quantity:");
+                            int quantity2 = input.nextInt();
+                            shoppingBasket.addItem(item2,quantity2);
+                            break;
+                        case 3:
+                            Menu.dairyMenu();
+                            String item3 = input.next();
+                            System.out.println("Enter the quantity:");
+                            int quantity3 = input.nextInt();
+                            shoppingBasket.addItem(item3,quantity3);
+                            break;
+                        case 4:
+                            checkingOperations();
+                        case 5:
+                            flag = false;
+                            break;
+                    }
                 case 2:
                     shoppingBasket.displayBasket();
                     System.out.println();
-                    displayMenu1();
+                    Menu.displayMenuAlt();
                     break;
                 case 3:
                     flag = false;

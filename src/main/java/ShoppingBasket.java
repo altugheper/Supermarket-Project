@@ -24,6 +24,11 @@ public class ShoppingBasket {
         prices.put("Apple", 3.69);
         prices.put("Watermelon", 79.99);
         prices.put("Grapes", 10.19);
+        prices.put("Cheese", 6.59);
+        prices.put("Yogurt", 4.50);
+        prices.put("Milk", 2.69);
+        prices.put("Kefir", 1.70);
+        prices.put("Egg", 13.99);
         Scanner input = new Scanner(System.in);
         flag = true;
     }
